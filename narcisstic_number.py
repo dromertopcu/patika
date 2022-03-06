@@ -1,37 +1,16 @@
 import time
 start_time = time.time()
-a = range(0,10000000)
+a = range(0,100000)
 l = list()
-n_sayi1 = -1
-sayi1 = -1
 print("Hesaplama başlıyor")
 for x in a:
-    _sum = list()
-    i = -1
+    sum = 0
     sayi = list(map(int,str(x)))
     n_sayi = len(sayi)
-    if n_sayi == n_sayi1 :
-        for p, k in zip(sayi, sayi1):
-            i +=1
-            if p == k :
-                _sum.insert(i,_sum1[i])
-            else :
-                _sum[i:i] =[p**n_sayi]
-        if sum(_sum) == x :
-            l.append(x)
-        sayi1 = sayi
-        n_sayi1 = n_sayi
-        _sum1 = _sum
-    else :
-        for p in sayi:
-            i +=1
-            _sum[i:i] =[p**n_sayi]
-        if sum(_sum) == x :
-            l.append(x)
-        sayi1 = sayi
-        n_sayi1 = n_sayi
-        _sum1 = _sum
-
+    for y in sayi:
+        sum = sum + y**n_sayi
+    if sum == int(x) :
+        l.append(x)
 if l :
     print(l)
     
