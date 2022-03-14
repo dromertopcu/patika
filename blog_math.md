@@ -1,6 +1,6 @@
-## Yeni bir blog yazısı ödevi daha. Artık daha tecrüberliyim. Hemen başlıyorum yazmaya. Matematik ile ilgili bir yazı yazmam istendi. Konu süper.
+## Yeni bir blog yazısı ödevi daha. Artık daha tecrüberliyim. Hemen başlıyorum yazmaya. Matematik ile ilgili bir yazı yazmam istendi. Konu süper.
 
-### Matrisler ve bunların bilgisayarlarda kullanımına dair bir yazı yazmak isterdim burada size. Ancak şunu itiraf etmem lazım ki henüz bu konu benim için tamamlanmış değil. Eğer sizin de tam bir fikriniz yoksa grafik sistemlerinde, deep learningde nasıl kullanıldığını araştırın derim.
+### Matrisler ve bunların bilgisayarlarda kullanımına dair bir yazı yazmak isterdim burada size. Ancak şunu itiraf etmem lazım ki henüz bu konu benim için tamamlanmış değil. Eğer sizin de tam bir fikriniz yoksa grafik sistemlerinde, deep learningde nasıl kullanıldığını araştırın derim.
 
 ## Ben boyutlar hakkında bir şeyler söylemiş olayım. 4. boyut nasıl görünüyor hiç merak ettiniz mi? İşte tesseract bunun bir örneği. Küpün 4 boyutlu bir analogu oluyor tesseract.
 
