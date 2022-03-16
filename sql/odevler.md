@@ -1,5 +1,3 @@
-Önceki ödevlerin sadece sonuçları eklenmiş olsa da bütün hepsi yenilenecek
-
 
 ---
 
