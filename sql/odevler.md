@@ -330,11 +330,22 @@
 
 ## 3. Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
 
-Yapıldı. Sonuçlar csv eklendi.
+```sql
+{
+    UPDATE employee
+    SET name = 'UPDATED'
+    WHERE id % 3 = 0;
+}
+```
 
 ## 4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
 
-Yapıldı. Sonuçlar csv eklendi.
+```sql
+{
+    DELETE FROM employee
+    WHERE birthday < '1975-01-01';
+}
+```
 
 ---
 
