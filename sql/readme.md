@@ -381,3 +381,142 @@ INNER JOIN rental ON customer.customer_id = rental.customer_id;
 ```
 
 ---
+
+---
+
+# Ödev 10
+
+## 1. city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz LEFT JOIN sorgusunu yazınız.
+
+```sql
+{
+SELECT city.city, country.country FROM city
+LEFT JOIN country ON city.country_id = country.country_id;
+}
+```
+
+## 2. customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz RIGHT JOIN sorgusunu yazınız.
+
+```sql
+{
+SELECT payment.payment_id, customer.first_name, customer.last_name FROM customer
+RIGHT JOIN payment ON payment.customer_id = customer.customer_id;
+}
+```
+
+## 3. customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz FULL JOIN sorgusunu yazınız.
+
+```sql
+{
+SELECT rental.rental_id, customer.first_name, customer.last_name FROM customer
+FULL JOIN rental ON rental.customer_id = customer.customer_id;
+}
+```
+
+---
+
+---
+
+# Ödev 11
+
+## 1. actor ve customer tablolarında bulunan first_name sütunları için tüm verileri sıralayalım.
+
+```sql
+{
+SELECT first_name FROM actor
+UNION
+SELECT first_name FROM customer;
+}
+```
+
+## 2. actor ve customer tablolarında bulunan first_name sütunları için kesişen verileri sıralayalım.
+
+```sql
+{
+SELECT first_name FROM actor
+INTERSECT
+SELECT first_name FROM customer;
+}
+```
+
+## 3. actor ve customer tablolarında bulunan first_name sütunları için ilk tabloda bulunan ancak ikinci tabloda bulunmayan verileri sıralayalım.
+
+```sql
+{
+SELECT first_name FROM actor
+EXCEPT
+SELECT first_name FROM customer;
+}
+```
+
+## 4. İlk 3 sorguyu tekrar eden veriler için de yapalım.
+
+```sql
+{
+1. UNION ALL;
+2. INTERSECT ALL;
+3. EXCEPT ALL;
+}
+```
+
+---
+
+---
+
+# Ödev 12
+
+## 1. film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?
+
+```sql
+{
+SELECT COUNT(*) FROM film
+WHERE length > 
+(
+SELECT AVG(length) FROM film
+);
+}
+```
+
+## 2. film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?
+
+```sql
+{
+SELECT COUNT(*) FROM film
+WHERE rental_rate = 
+(
+SELECT MAX(rental_rate) FROM film
+);
+}
+```
+
+## 3. film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.
+
+```sql
+{
+SELECT title, rental_rate, replacement_cost
+FROM film
+WHERE rental_rate = 
+	(
+		SELECT MIN(rental_rate) FROM film
+	) 
+AND 
+	replacement_cost =
+	(
+		SELECT MIN(replacement_cost) FROM film
+	);
+}
+```
+
+## 4. payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
+
+```sql
+{
+SELECT COUNT(payment.customer_id), customer.first_name, customer.last_name, payment.customer_id AS id
+FROM payment
+JOIN customer ON customer.customer_id = payment.customer_id
+GROUP BY payment.customer_id, customer.first_name, customer.last_name
+ORDER BY COUNT(payment.customer_id) DESC;
+}
+```
+
+---
